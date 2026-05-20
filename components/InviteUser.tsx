@@ -56,7 +56,7 @@ const handleInvite = async  (e: SubmitEvent<HTMLFormElement>) => {
     </Button>
     <DialogContent>
       <DialogHeader>
-        <DialogTitle>Invite a user to collaborate! yo </DialogTitle>
+        <DialogTitle>Invite a user to collaborate! </DialogTitle>
         <DialogDescription>
           Enter the email of the user you want to invite.
         </DialogDescription>
