@@ -4,9 +4,15 @@ import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest){
-    await auth.protect();
+   // await auth.protect();
 
-    const {sessionClaims} = await auth();
+    const {sessionClaims, userId} = await auth();
+    if (!userId) {
+        return NextResponse.json(
+            { message: "Unauthorized" },
+            { status: 401 }
+        );
+    }
     const {room} = await req.json(); 
 
     const session = liveblocks.prepareSession(sessionClaims?.email!, {
