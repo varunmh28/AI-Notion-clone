@@ -85,7 +85,7 @@ function TranslateDocument({doc}: {doc: Y.Doc}) {
 
  const documentData = JSON.stringify(rawData);
 
- console.log(documentData);
+ //console.log(documentData);
 
 
            // const documentData = doc.get("document-store").toJSON();

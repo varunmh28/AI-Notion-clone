@@ -14,6 +14,7 @@ import "@blocknote/core/fonts/inter.css";
 import "@blocknote/shadcn/style.css";
 import stringToColor from '@/lib/stringToColor';
 import TranslateDocument from './TranslateDocument';
+import ChatToDocument from './ChatToDocument';
 
 
 
@@ -102,7 +103,7 @@ function Editor() {
     {/* Translate Doc AI feature */}
     <TranslateDocument doc={doc} />
     {/* Chat to Doc AI feature */}
-
+    <ChatToDocument doc={doc} />
     {/* Dark Mode */}
     <Button className={style} onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? <SunIcon /> : <MoonIcon />}
