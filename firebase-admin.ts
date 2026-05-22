@@ -6,6 +6,8 @@ import {
     } from "firebase-admin/app";
 
     import { getFirestore } from "firebase-admin/firestore";
+    import fs from "fs";
+    import path from "path";
 
   //  const serviceKey = require("@/service_key.json");
 
@@ -21,8 +23,9 @@ import {
       };
   } else {
       // Falls back to your local, gitignored JSON file during local dev
-      const configPath = "@/service_key.json";
-        serviceKey = require(`${configPath}`);
+      const jsonPath = path.join(process.cwd(), "service_key.json");
+    const fileContents = fs.readFileSync(jsonPath, "utf8");
+    serviceKey = JSON.parse(fileContents);
   }
 
 
