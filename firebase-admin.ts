@@ -8,7 +8,7 @@ import {
     import { getFirestore } from "firebase-admin/firestore";
 
   //  const serviceKey = require("@/service_key.json");
-  
+
   let serviceKey;
 
   // Checks if we are running on Vercel production or local development
@@ -21,7 +21,8 @@ import {
       };
   } else {
       // Falls back to your local, gitignored JSON file during local dev
-      serviceKey = require("@/service_key.json");
+      const configPath = "@/service_key.json";
+        serviceKey = require(`${configPath}`);
   }
 
 
